@@ -45,29 +45,31 @@
     width: 60px;
     height: 60px;
     background: red;
-    transition: 3s;
+    transition: 2s;
 }
 .ex-5-square:hover {
-    scale: 2;
+    transform: scale(1.5);
 }
 .ex-5-square:active {
-    scale: 1;
+    transform: scale(0.5);
+    background-color: yellow;
 }
 
 .ex-6-img, .ex-7-img, .ex-8-img {
     width: 500px;
 }
 .ex-6-img {
-    transform: 1;
+    transition: 2s;
 }
 .ex-6-img:hover {
-    filter: grayscale(1);
+    filter: grayscale(100%);
 }
 .ex-7-img {
     transition: 3s;
 }
 .ex-7-img:hover {
-    filter: grayscale(3) brightness(2);
+    filter: grayscale(100%) invert(100%);
+    rotate: 180deg;
 }
 .ex-8-img {
     transition: 3s;
@@ -86,16 +88,22 @@
 .ex-9-img:hover {
     filter: grayscale(3) sepia(2);
     border-radius: 10%;
-    scale: 0.8;
+    transform: scale(0.8);
 }
 
 .ex-10-icon {
     font-size: 60px;
-    animation: spin 1s linear infinite;
+    animation-name: spin;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 @keyframes spin {
     0% {
-        transform: rotate(1turn);
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -103,17 +111,19 @@
     font-size: 60px;
 }
 .ex-11-icon:hover {
-    animation: spinALittleBit 2s linear;
-}
-@keyframes spinALittleBit {
+    animation-name: rotation;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;}
+@keyframes rotation {
     0% {
-        transform: rotate(0);
+        transform: rotate(0deg);
     }
     90% {
-        transform: rotate(315deg);
+        transform: rotate(270deg);
     }
     100% {
-        transform: rotate(0);
+        transform: rotate(0deg);
     }
 }
 
